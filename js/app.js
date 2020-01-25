@@ -1,12 +1,11 @@
 /**
  * Metodo que le o pdf anexado
- * @param inout Files
+ * @param input Files
  */
 function readFile(input) {
 	for (i = 0; i < input.files.length; i++) {
 		readPDF(input.files[i], function(text) {
-		 	console.log(text)
-			console.log("################")
+			analyse(text)
 		});
 	}
 }
@@ -24,7 +23,7 @@ function showDialog(text) {
 /**
  * Metodo que esconde varios componentes quando carrega a tela
  */
-function onLoadScreen() {
+function onloadScreen() {
 	$("#successAlert").hide();
 	$("#errorAlert").hide();
 	$(".progress").hide();

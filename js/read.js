@@ -1,3 +1,8 @@
+/**
+ * Metodo que le o pdf anexado, e retorna o callback com o texto do PDF
+ * @param input Files
+ * @param callback
+ */
 function readPDF(file, callback) {
 	// Read the file using file reader
 	var fileReader = new FileReader()
