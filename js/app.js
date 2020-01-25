@@ -1,10 +1,13 @@
-var resultPDF
-
+/**
+ * Metodo que le o pdf anexado
+ * @param inout Files
+ */
 function readFile(input) {
 	for (i = 0; i < input.files.length; i++) {
-		readPDF(input.files[i])
-		console.log(resultPDF)
-		console.log("################")
+		readPDF(input.files[i], function(text) {
+		 	console.log(text)
+			console.log("################")
+		});
 	}
 }
 

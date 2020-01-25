@@ -4,22 +4,17 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Avenir" />
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/app.css" />
-<link rel="stylesheet" href="css/dropzone.css" />
 <link rel="stylesheet" href="css/file.css" />
 
 <!-- JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
-
 <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/read.js"></script>
-<script type="text/javascript" src="js/dropzone.js"></script>
-
-
-<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 
 <title>Calculadora de IR</title>
 
@@ -60,30 +55,12 @@
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
 
-		<!-- <form action="#" th:action="@{/}" th:object="${homeViewModel}"
-			method="post"> -->
-			
-			<!-- CORRETORA RADIO BUTTONS -->
-			<!-- <p class="default-text">Selecione uma Corretora</p>
-			<label class="radio-inline default-color"> <input type="radio" name="optradio" value="terra">Terra</label> 
-			<label class="radio-inline default-color"> <input type="radio" name="optradio" value="xp">XP</label> 
-			<label class="radio-inline default-color"> <input type="radio" name="optradio" value="clear">Clear</label> 
-			
-			<hr/> -->
-			
-			<p class="default-text">Arraste ou Clique abaixo para anexar as notas de negociação</p>
+		<p class="default-text">Arraste ou Clique abaixo para anexar as notas de negociação</p>
 
-			<!-- PAINEL PARA DRAG AND DROP -->
-			<div class="form-group files">
-				<input type="file" class="form-control"  onchange="readFile(this)" multiple="">
-			</div>
-			
-			<!-- <hr/> -->
-
-			<!-- BOTÕES -->
-			<!-- <button type="button" hidden="true" class="btn btn-primary" onchange="readFile(this)" id="btnSend">INICIAR ANÁLISE</button> -->
-			
-		<!-- </form> -->
+		<!-- PAINEL PARA DRAG AND DROP -->
+		<div class="form-group files">
+			<input type="file" class="form-control"  onchange="readFile(this)" multiple="">
+		</div>
 
 		<!-- Modal -->
 		<div id="validateModal" class="modal fade" role="dialog">

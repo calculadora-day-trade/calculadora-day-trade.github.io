@@ -1,5 +1,4 @@
-
-function readPDF(file) {
+function readPDF(file, callback) {
 	// Read the file using file reader
 	var fileReader = new FileReader()
 	fileReader.onload = function() {
@@ -9,11 +8,11 @@ function readPDF(file) {
 
 		// calling function to read from pdf file
 		getText(typedarray).then(function(text) {
-			resultPDF = text
+			callback(text);
 		}, function(reason) {
-			alert('Seems this file is broken, please upload another file')
+			alert('Aconteceu alguma coisa de errado')
 			console.error(reason)
-		});
+		})
 
 		function getText(typedarray) {
 			var pdf = PDFJS.getDocument(typedarray)
