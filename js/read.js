@@ -23,8 +23,8 @@ function readPDF(file, callback) {
 				var maxPages = pdf.pdfInfo.numPages;
 				var countPromises = []
 
-				for (var j = 1; j <= maxPages; j++) {
-					var page = pdf.getPage(j)
+				// for (var j = 1; j <= maxPages; j++) {
+					var page = pdf.getPage(maxPages)
 
 					var txt = ""
 					countPromises.push(page.then(function(page) {
@@ -36,7 +36,7 @@ function readPDF(file, callback) {
 							}).join('') 
 						})
 					}))
-				}
+				// }
 
 				return Promise.all(countPromises).then(function(texts) {
 					return texts.join('')

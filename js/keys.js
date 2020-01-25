@@ -1,5 +1,8 @@
 const TERRA_CORRETORA = {
 
+	DEBIT: "D",
+	CREDIT: "C",
+
 	// codigo do cliente
 	CLIENT_CODE_FIRST_WORD: "Código do cliente",
     CLIENT_CODE_SECOND_WORD: "Assessor",
@@ -14,15 +17,12 @@ const TERRA_CORRETORA = {
     
     // valor bruto
     GROSS_VALUE_FIRST_WORD: "Valor dos negócios",
-    GROSS_VALUE_FIRST_WORD: "C",
     
-    // valor líquido
+    // valor líquido 
     NET_VALUE_FIRST_WORD: "Total liquido da nota",
-    NET_VALUE_SECOND_WORD: "C",
 
-    // taxas
+    // taxas 
     TOTAL_FEES_FIRST_WORD: "Total das despesas",
-    TOTAL_FEES_SECOND_WORD: "D",
 
     // IRRF
     IRRF_DAY_TRADE_FIRST_WORD: "IRRF Day Trade Projeção",
