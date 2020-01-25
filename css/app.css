@@ -1,0 +1,36 @@
+.jumbotron {
+	background: #004445;
+}
+
+.header-text {
+	color: #FFFFFF;
+	font-size: 64px !important;
+	font-family: Avenir;
+}
+
+.header-description {
+	color: #FFFFFF;
+	font-family: Avenir;
+}
+
+.default-text {
+	color: #4C4C4C;
+	font-size: 20px !important;
+	font-family: Avenir;
+}
+
+.default-color {
+	font-family: Avenir;
+	color: #4C4C4C;
+}
+
+#footer {
+	background: #004445;
+	padding-top: 18px;
+	padding-bottom: 8px;
+}
+
+#footerLabel {
+	color: #FFFFFF;
+	font-family: Avenir;
+}
