@@ -15,17 +15,17 @@ function readFile(input) {
  * @param text String
  */
 function showDialog(text) {
-	var dialog = $('#validateModal');
-	dialog.find('.modal-body p').text(text);
-	dialog.modal('show');
+	var dialog = $('#validateModal')
+	dialog.find('.modal-body p').text(text)
+	dialog.modal('show')
 }
 
 /**
  * Metodo que esconde varios componentes quando carrega a tela
  */
 function onloadScreen() {
-	$("#successAlert").hide();
-	$("#errorAlert").hide();
-	$(".progress").hide();
-	$("#resultTable").hide();
+	$("#successAlert").hide()
+	$("#errorAlert").hide()
+	$(".progress").hide()
+	$("#resultTable").hide()
 }
