@@ -1,5 +1,5 @@
 /**
- * Metodo que le o pdf anexado, e retorna o callback com o texto do PDF
+ * Metodo que le o pdf anexado, e retorna com o texto do PDF
  * @param input Files
  * @param callback
  */

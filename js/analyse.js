@@ -19,35 +19,41 @@ function analyse(text) {
 	var gross = getFromBetween.get(finalString, TERRA_CORRETORA.GROSS_VALUE_FIRST_WORD, operationType)
 	var net = getFromBetween.get(finalString, TERRA_CORRETORA.NET_VALUE_FIRST_WORD, operationType)
 	
+	var finalGross = formatNegativeValue(gross[0])
+	var finalNet = formatNegativeValue(net[0])
+	if (isCredit(operationType)) {
+		finalGross = formatPositiveValue(gross[0])
+		finalNet = formatPositiveValue(net[0])
+	}
+
 	console.log("################")
 	// console.log(finalString)
 	console.log("Codigo do Cliente: " + code[0])
 	console.log("Data: " + date[0])
 	console.log("Numero da Nota: " + number[0])
-	console.log("Bruto: " + gross[0])
-	console.log("Liquido: " + net[0])
+	console.log("Bruto: " + finalGross)
+	console.log("Liquido: " + finalNet)
 	console.log("Taxas " + fees[0])
 	console.log("Impostos " + irrf[0])
 	console.log("Gain " + operationType)
 	console.log("################")
 
-	var gain = false
-	if (operationType == TERRA_CORRETORA.CREDIT) {
-		gain = true
-	}
-
 	var model = { 
 		clientCode: formatResult(code[0]), 
 		date: formatResult(date[0]), 
 		noteNumber: formatResult(number[0]), 
-		grossValue: formatValue(gross[0]), 
-		netValue: formatValue(net[0]), 
-		totalFees: formatValue(fees[0]), 
-		totalIRRF: formatValue(irrf[0]),
-		gain: gain 
+		grossValue: finalGross, 
+		netValue: finalNet, 
+		totalFees: formatNegativeValue(fees[0]), 
+		totalIRRF: formatPositiveValue(irrf[0]),
+		gain: isCredit(operationType)
 	}
 
 	return model
+}
+
+function isCredit(operationType) {
+	return operationType == TERRA_CORRETORA.CREDIT
 }
 
 /**
@@ -62,8 +68,16 @@ function formatResult(value) {
  * Metodo responsavel por receber um texto, remover os espacos e colocar R$
  * @param text String
  */
-function formatValue(value) {
+function formatPositiveValue(value) {
 	return "R$ " + formatResult(value)
+}
+
+/**
+ * Metodo responsavel por receber um texto, remover os espacos e colocar R$
+ * @param text String
+ */
+function formatNegativeValue(value) {
+	return "- R$ " + formatResult(value)
 }
 
 /**

@@ -20,12 +20,12 @@ function print(model) {
 
  	$.each(model, function (index, m) {
         var nTr = "<tr>"
-        nTr += "<td><p>" + m.date + "</p></td>"
-        nTr += "<td><p>" + m.noteNumber + "</p></td>"
-        nTr += "<td><p>" + m.grossValue + "</p></td>"
-        nTr += "<td><p>" + m.totalIRRF + "</p></td>"
-        nTr += "<td><p>" + m.totalFees + "</p></td>"
-        nTr += "<td><p>" + m.netValue + "</p></td>"
+        nTr += "<td>" + m.date + "</td>"
+        nTr += "<td>" + m.noteNumber + "</td>"
+        nTr += "<td>" + m.grossValue + "</td>"
+        nTr += "<td>" + m.totalIRRF + "</td>"
+        nTr += "<td>" + m.totalFees + "</td>"
+        nTr += "<td>" + m.netValue + "</td>"
         nTr += "</tr>"
 
         $(nTr).appendTo('#resultTable')
