@@ -3,7 +3,6 @@
 <head>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Avenir" />
 	<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
@@ -28,46 +27,48 @@
 	<!-- https://www.dropzonejs.com/#installation -->
 	<!-- https://spring.io/guides/gs/handling-form-submission/ -->
 
-	<div class="jumbotron">
+	<div class="header">
 		<div class="container">
-			<p class="header-text">Calculadora de IR Day Trade (WIN)</p>
-			<p class="header-description">Chega de planilhas! Agora ficou muito mais fácil de calcular o IR, analisa todas as suas notas de negociação de uma só vez.
-			</p>
+			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
+			<p class="header-subtitle">Chega de planilhas! Agora ficou muito mais fácil de calcular o IR do seu day trade.</p><br/>
+			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível apenas para a corretora TERRA, mas fique atento que em breve estará disponível para mais corretoras.</p>
 		</div>
 	</div>
 
 	<div class="container">
 
 		<!-- BARRA DE PROGRESSO -->
-		<div class="progress">
+<!-- 		<div class="progress">
 			<div
 				class="progress-bar progress-bar-striped active progress-bar-success"
 				role="progressbar" aria-valuenow="40" aria-valuemin="1"
 				aria-valuemax="100" style="width: 5%" id="progressBar">5%
 			</div>
-		</div>
+		</div> -->
 		
 		<br/>
 
 		<!-- ALERTAS -->
-		<div class="alert alert-success alert-dismissible fade in" id="successAlert">
+		<!-- <div class="alert alert-success alert-dismissible fade in" id="successAlert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			A leitura das notas de negociação foi realizada com sucesso!
-		</div>
+		</div> -->
 		<div class="alert alert-danger alert-dismissible fade in" id="errorAlert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
 
-		<p class="default-text">Arraste ou Clique abaixo para anexar as notas de negociação</p>
+		<p class="default-text">Arraste ou clique abaixo para anexar as notas de negociação</p>
 
 		<!-- PAINEL PARA DRAG AND DROP -->
 		<div class="form-group files">
-			<input type="file" class="form-control"  onchange="readFile(this)" multiple="">
+			<input type="file" class="form-control" onchange="readFile(this)" multiple="">
 		</div>
 
+		<br/><br/><br/>
+
 		<!-- Modal -->
-		<div id="validateModal" class="modal fade" role="dialog">
+<!-- 		<div id="validateModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -82,7 +83,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- RESULTADO -->
 		<table class="table table-bordered table-striped" id="resultTable">
@@ -102,20 +103,21 @@
 	</div>
 	
 	<footer class="page-footer font-small teal pt-4" id="footer">
-		<div class="container-fluid text-center text-md-left">
+		<div class="container">
+			<div class="container-fluid text-center">
 
-			<div class="row">
-				<div id="footerLabel">
-					<h5 class="text-uppercase font-weight-bold">Entre em Contato</h5>
-					<p>Se você tem alguma crítica, dúvida, elogio ou sugestão entre em contato com 
-					a gente através do nosso e-mail: thales.bm92@gmail.com</p>
+				<div class="row">
+					<div id="footerLabel">
+						<h5 class="text-uppercase font-weight-bold">Entre em Contato</h5>
+						<p>Se você tem alguma crítica, dúvida, elogio ou sugestão entre em contato através do e-mail: thales.bm92@gmail.com</p>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="footer-copyright text-center py-3" id="footerLabel">
-			<p>Copyright © Thales Marega 2020</p>
-		</div>
+			<div class="footer-copyright text-center py-3" id="footerLabel">
+				<p>Copyright © Thales Marega 2020</p>
+			</div>
+	</div>
 	</footer>
 </body>
 </html>

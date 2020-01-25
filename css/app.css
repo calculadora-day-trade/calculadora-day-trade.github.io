@@ -1,36 +1,45 @@
-.jumbotron {
-	background: #004445;
+.header {
+	background: #2C2C2C;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
-.header-text {
+.header-title {
 	color: #FFFFFF;
-	font-size: 64px !important;
-	font-family: Avenir;
+	font-size: 56px !important;
+	font-family: monaco;
+}
+
+.header-subtitle {
+	color: #FFFFFF;
+	font-family: monaco;
+	font-size: 18px !important;
 }
 
 .header-description {
 	color: #FFFFFF;
-	font-family: Avenir;
+	font-family: monaco;
+	font-size: 14px !important;
 }
 
 .default-text {
 	color: #4C4C4C;
 	font-size: 20px !important;
-	font-family: Avenir;
+	font-family: monaco;
 }
 
 .default-color {
-	font-family: Avenir;
+	font-family: monaco;
 	color: #4C4C4C;
 }
 
 #footer {
-	background: #004445;
+	background: #2C2C2C;
 	padding-top: 18px;
 	padding-bottom: 8px;
 }
 
 #footerLabel {
 	color: #FFFFFF;
-	font-family: Avenir;
+	font-family: monaco;
 }

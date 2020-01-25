@@ -46,8 +46,8 @@ function showDialog(text) {
  * Metodo que esconde varios componentes quando carrega a tela
  */
 function onloadScreen() {
-	$("#successAlert").hide()
+	// $("#successAlert").hide()
 	$("#errorAlert").hide()
-	$(".progress").hide()
+	// $(".progress").hide()
 	$("#resultTable").hide()
 }
