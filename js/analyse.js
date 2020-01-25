@@ -28,7 +28,13 @@ function analyse(text) {
 	console.log("Liquido: " + net[0])
 	console.log("Taxas " + fees[0])
 	console.log("Impostos " + irrf[0])
+	console.log("Gain " + operationType)
 	console.log("################")
+
+	var gain = false
+	if (operationType == TERRA_CORRETORA.DEBIT) {
+		gain = true
+	}
 
 	var model = { 
 		clientCode: formatResult(code[0]), 
@@ -37,8 +43,11 @@ function analyse(text) {
 		grossValue: formatResult(gross[0]), 
 		netValue: formatResult(net[0]), 
 		totalFees: formatResult(fees[0]), 
-		totalIRRF: formatResult(irrf[0]) 
+		totalIRRF: formatResult(irrf[0]),
+		gain: gain 
 	}
+
+	return model
 }
 
 function formatResult(value) {

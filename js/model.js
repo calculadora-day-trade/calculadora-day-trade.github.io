@@ -5,5 +5,6 @@ var model = {
 	grossValue: "",
 	netValue: "",
 	totalFees: "",
-	totalIRRF: ""
+	totalIRRF: "",
+	gain: true
 }

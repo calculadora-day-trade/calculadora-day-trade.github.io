@@ -3,11 +3,31 @@
  * @param input Files
  */
 function readFile(input) {
+	// var models = []
 	for (i = 0; i < input.files.length; i++) {
 		readPDF(input.files[i], function(text) {
-			analyse(text)
+			var model = [analyse(text)]
+			print(model)
 		});
 	}
+}
+
+function print(model) {
+	$("#resultTable").show()
+
+ 	$.each(model, function (index, m) {
+        var nTr = "<tr>"
+        nTr += "<td><p>" + m.date + "</p></td>"
+        nTr += "<td><p>" + m.noteNumber + "</p></td>"
+        nTr += "<td><p>" + m.grossValue + "</p></td>"
+        nTr += "<td><p>" + m.totalIRRF + "</p></td>"
+        nTr += "<td><p>" + m.totalFees + "</p></td>"
+        nTr += "<td><p>" + m.netValue + "</p></td>"
+        nTr += "<td><p>" + m.gain + "</p></td>"
+        nTr += "</tr>"
+
+        $(nTr).appendTo('#resultTable')
+    })
 }
 
 /**
