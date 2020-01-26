@@ -1,4 +1,4 @@
-var model = {
+var notes = {
 	clientCode: "",
 	date: "",
 	noteNumber: "",

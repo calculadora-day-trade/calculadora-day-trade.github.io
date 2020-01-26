@@ -38,7 +38,7 @@ function analyse(text) {
 	console.log("Gain " + isCredit(operationType))
 	console.log("################")
 
-	var model = { 
+	var notes = { 
 		clientCode: formatResult(code[0]), 
 		date: formatResult(date[0]), 
 		noteNumber: formatResult(number[0]), 
@@ -49,7 +49,7 @@ function analyse(text) {
 		gain: isCredit(operationType)
 	}
 
-	return model
+	return notes
 }
 
 function isCredit(operationType) {
