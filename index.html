@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/file.css" />
 
 	<!-- JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
 	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
@@ -25,7 +25,6 @@
 
 	<!-- https://www.w3schools.com/bootstrap/bootstrap_examples.asp -->
 	<!-- https://www.dropzonejs.com/#installation -->
-	<!-- https://spring.io/guides/gs/handling-form-submission/ -->
 
 	<div class="header">
 		<div class="container">
@@ -36,23 +35,10 @@
 	</div>
 
 	<div class="container">
-
-		<!-- BARRA DE PROGRESSO -->
-<!-- 		<div class="progress">
-			<div
-				class="progress-bar progress-bar-striped active progress-bar-success"
-				role="progressbar" aria-valuenow="40" aria-valuemin="1"
-				aria-valuemax="100" style="width: 5%" id="progressBar">5%
-			</div>
-		</div> -->
 		
 		<br/>
 
 		<!-- ALERTAS -->
-		<!-- <div class="alert alert-success alert-dismissible fade in" id="successAlert">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			A leitura das notas de negociação foi realizada com sucesso!
-		</div> -->
 		<div class="alert alert-danger alert-dismissible fade in" id="errorAlert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
@@ -65,27 +51,11 @@
 			<input type="file" class="form-control" onchange="readFile(this)" multiple="">
 		</div>
 
-		<br/><br/><br/>
-
-		<!-- Modal -->
-<!-- 		<div id="validateModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Atenção</h4>
-					</div>
-					<div class="modal-body">
-						<p>Some text in the modal.</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-					</div>
-				</div>
-			</div>
-		</div> -->
+		<br/>
 
 		<!-- RESULTADO -->
+		<p class="default-text" id="resultDescription">Veja o seu resultado abaixo:</p>
+
 		<table class="table table-bordered table-striped" id="resultTable">
 			<thead>
 				<tr>
@@ -102,6 +72,7 @@
 		</table>
 	</div>
 	
+	<!-- FOOTER -->
 	<footer class="page-footer font-small teal pt-4" id="footer">
 		<div class="container">
 			<div class="container-fluid text-center">
@@ -117,7 +88,7 @@
 			<div class="footer-copyright text-center py-3" id="footerLabel">
 				<p>Copyright © Thales Marega 2020</p>
 			</div>
-	</div>
+		</div>
 	</footer>
 </body>
 </html>

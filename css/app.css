@@ -43,3 +43,8 @@
 	color: #FFFFFF;
 	font-family: monaco;
 }
+
+#errorAlert {
+	opacity: 100 !important;
+	font-family: monaco;
+}
