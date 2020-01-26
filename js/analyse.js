@@ -35,7 +35,7 @@ function analyse(text) {
 	console.log("Liquido: " + finalNet)
 	console.log("Taxas " + fees[0])
 	console.log("Impostos " + irrf[0])
-	console.log("Gain " + operationType)
+	console.log("Gain " + isCredit(operationType))
 	console.log("################")
 
 	var model = { 

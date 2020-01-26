@@ -3,7 +3,6 @@
  * @param input Files
  */
 function readFile(input) {
-
 	var isValid = validadeInput(input.files)
 
 	if (isValid != "") {
@@ -11,14 +10,32 @@ function readFile(input) {
 		document.getElementById("errorAlert").innerHTML = isValid
 
 	} else {
+		startReadFile(input.files)
+	}
+}
 
-		$("#errorAlert").hide()
-		for (i = 0; i < input.files.length; i++) {
-			readPDF(input.files[i], function(text) {
-				var model = [analyse(text)]
+/**
+ * Metodo responsavel por começar a leitura do pdf
+ * @param input Files
+ */
+function startReadFile(files) {
+	$("#errorAlert").hide()
+	$('#overlay').fadeIn()
+
+	var listLength = files.length
+	var model = []
+	var count = 0
+
+	for (i = 0; i < listLength; i++) {
+		readPDF(files[i], function(text) {
+			count++
+
+			model.push(analyse(text))
+			if (count == listLength) {
+				$('#overlay').fadeOut()
 				print(model)
-			});
-		}
+			}
+		})
 	}
 }
 
@@ -47,12 +64,27 @@ function validadeInput(files) {
 }
 
 /**
+ * Metodo responsavel por ordenar a lista
+ */
+function compare(a, b) {
+	if (a.date < b.date) {
+		return -1
+	}
+	if (a.date > b.date) {
+		return 1
+	}
+	return 0
+}
+
+/**
  * Metodo responsavel por carregar as informaçoes na tabela
  * @param text Array[Model]
  */
 function print(model) {
 	$("#resultTable").show()
 	$("#resultDescription").show()
+
+	model.sort(compare)
 
  	$.each(model, function (index, m) {
  		var nTr = "<tr style='background-color: #F4D6D5' !important>"
