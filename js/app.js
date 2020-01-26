@@ -32,7 +32,6 @@ function startReadFile(files) {
 
 			model.push(analyse(text))
 			if (count == listLength) {
-				$('#overlay').fadeOut()
 				print(model)
 			}
 		})
@@ -102,6 +101,9 @@ function print(model) {
 
         $(nTr).appendTo('#resultTable')
     })
+
+    $('#overlay').fadeOut()
+    calculate(model)
 }
 
 /**
