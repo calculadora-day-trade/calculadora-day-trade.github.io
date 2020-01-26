@@ -63,19 +63,6 @@ function validadeInput(files) {
 }
 
 /**
- * Metodo responsavel por ordenar a lista
- */
-function compare(a, b) {
-	if (a.date < b.date) {
-		return -1
-	}
-	if (a.date > b.date) {
-		return 1
-	}
-	return 0
-}
-
-/**
  * Metodo responsavel por carregar as informaçoes na tabela
  * @param text Array[Model]
  */
@@ -103,7 +90,21 @@ function print(model) {
     })
 
     $('#overlay').fadeOut()
-    calculate(model)
+    
+    var result = calculate(model)
+}
+
+/**
+ * Metodo responsavel por ordenar a lista
+ */
+function compare(a, b) {
+	if (a.date < b.date) {
+		return -1
+	}
+	if (a.date > b.date) {
+		return 1
+	}
+	return 0
 }
 
 /**

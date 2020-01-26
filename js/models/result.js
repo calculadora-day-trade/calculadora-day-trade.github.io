@@ -1,6 +1,6 @@
 var result = {
-	grossValue: "",
-	netValue: "",
-	totalFees: "",
-	totalIRRF: ""
+	grossValue: 0.0,
+	netValue: 0.0,
+	totalFees: 0.0,
+	totalIRRF: 0.0
 }

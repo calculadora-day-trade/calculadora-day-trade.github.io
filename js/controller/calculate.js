@@ -1,3 +1,7 @@
+/**
+ * Metodo responsavel por realizar a somatoria das notas de negociação
+ * @param model Model
+ */
 function calculate(model) {
 
 	var totalGross = 0.0
@@ -11,8 +15,6 @@ function calculate(model) {
 		var fees = cleanValue(model[i].totalFees)
 		var irrf = cleanValue(model[i].totalIRRF)
 
-		console.log(gross + " : " + net + " : " + fees + " : " + irrf)
-
 		totalGross = totalGross + gross
 		totalNet = totalNet + net
 		totalFees = totalFees + fees
@@ -20,8 +22,21 @@ function calculate(model) {
 	}
 
 	console.log(totalGross + " : " + totalNet + " : " + totalFees + " : " + totalIRRF)
+
+	var result = {
+		grossValue: totalGross,
+		netValue: totalNet,
+		totalFees: totalFees,
+		totalIRRF: totalIRRF
+	}
+
+	return result
 }
 
+/**
+ * Metodo responsavel por converter para float e remover todos os caracteres especiais
+ * @param value String
+ */
 function cleanValue(value) {
 	return parseFloat(value.replace("R$", "").replace(",", ".").replace(/\s/g, '').trim())
 }
