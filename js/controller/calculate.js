@@ -21,13 +21,14 @@ function calculate(model) {
 		totalIRRF = totalIRRF + irrf
 	}
 
-	console.log(totalGross + " : " + totalNet + " : " + totalFees + " : " + totalIRRF)
+	var total = totalNet + totalIRRF
 
 	var result = {
 		grossValue: totalGross,
 		netValue: totalNet,
 		totalFees: totalFees,
-		totalIRRF: totalIRRF
+		totalIRRF: totalIRRF,
+		total: total
 	}
 
 	return result

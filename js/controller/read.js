@@ -12,7 +12,7 @@ function readPDF(file, callback) {
 		getText(typedarray).then(function(text) {
 			callback(text);
 		}, function(reason) {
-			alert('Aconteceu alguma coisa de errado')
+			alert('Ocorreu um erro inesperado, tente novamente mais tarde.')
 			console.error(reason)
 		})
 

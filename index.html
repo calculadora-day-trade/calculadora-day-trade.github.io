@@ -57,22 +57,42 @@
 		<br/>
 
 		<!-- RESULTADO -->
-		<p class="default-text" id="resultDescription">Veja o seu resultado abaixo:</p>
+		<div id="result">
+			<p class="default-text">Veja o seu resultado:</p>
 
-		<table class="table table-bordered table-striped" id="resultTable">
-			<thead>
-				<tr>
-					<th>Data</th>
-					<th>Número da Nota</th>
-					<th>Valor Bruto</th>
-					<th>IRRF</th>
-					<th>Taxas</th>
-					<th>Lucro Líquido</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+			<table class="table table-bordered table-striped" id="resultTable">
+				<thead>
+					<tr>
+						<th>Bruto</th>
+						<th>Taxas</th>
+						<th>IRRF</th>
+						<th>Líquido (Bruto - Taxas)</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- RESUMO -->
+		<div id="resume">
+			<p class="default-text">Veja o seu resumo das notas de negociação:</p>
+
+			<table class="table table-bordered table-striped" id="resumeTable">
+				<thead>
+					<tr>
+						<th>Data</th>
+						<th>Número da Nota</th>
+						<th>Valor Bruto</th>
+						<th>Taxas</th>
+						<th>IRRF</th>
+						<th>Lucro Líquido</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<!-- LOADING -->

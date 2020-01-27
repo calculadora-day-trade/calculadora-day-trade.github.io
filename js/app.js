@@ -32,7 +32,7 @@ function startReadFile(files) {
 
 			model.push(analyse(text))
 			if (count == listLength) {
-				print(model)
+				printModel(model)
 			}
 		})
 	}
@@ -63,12 +63,12 @@ function validadeInput(files) {
 }
 
 /**
- * Metodo responsavel por carregar as informaçoes na tabela
+ * Metodo responsavel por exibir as informaçoes na tabela
  * @param text Array[Model]
  */
-function print(model) {
-	$("#resultTable").show()
-	$("#resultDescription").show()
+function printModel(model) {
+	$("#resume").show()
+	$("#result").show()
 
 	model.sort(compare)
 
@@ -81,17 +81,37 @@ function print(model) {
         nTr += "<td>" + m.date + "</td>"
         nTr += "<td>" + m.noteNumber + "</td>"
         nTr += "<td>" + m.grossValue + "</td>"
-        nTr += "<td>" + m.totalIRRF + "</td>"
         nTr += "<td>" + m.totalFees + "</td>"
+        nTr += "<td>" + m.totalIRRF + "</td>"
         nTr += "<td>" + m.netValue + "</td>"
+        nTr += "</tr>"
+
+        $(nTr).appendTo('#resumeTable')
+    })
+
+    printResult(model)
+}
+
+/**
+ * Metodo responsavel por exibir as informaçoes na tabela
+ * @param text Array[Model]
+ */
+function printResult(model) {
+	var result = [calculate(model)]
+
+	$.each(result, function (index, r) {
+ 		var nTr = "<tr style='background-color: #d5f3f4' !important>"
+        
+        nTr += "<td>" + "R$ " + r.grossValue + "</td>"
+        nTr += "<td>" + "R$ " + r.totalFees + "</td>"
+        nTr += "<td>" + "R$ " + r.totalIRRF + "</td>"
+        nTr += "<td>" + "R$ " + r.total + "</td>"
         nTr += "</tr>"
 
         $(nTr).appendTo('#resultTable')
     })
 
-    $('#overlay').fadeOut()
-    
-    var result = calculate(model)
+	$('#overlay').fadeOut()
 }
 
 /**
@@ -112,6 +132,6 @@ function compare(a, b) {
  */
 function onloadScreen() {
 	$("#errorAlert").hide()
-	$("#resultDescription").hide()
-	$("#resultTable").hide()
+	$("#resume").hide()
+	$("#result").hide()
 }
