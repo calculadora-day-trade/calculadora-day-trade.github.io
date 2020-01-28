@@ -1,9 +1,18 @@
+var cache = false
+
 /**
  * Metodo que le o pdf anexado
  * @param input Files
  */
 function readFile(input) {
 	var isValid = validadeInput(input.files)
+
+	if (cache) {
+		$("#resultTable tr").remove();
+		$("#resumeTable tr").remove();
+	} else {
+		cache = true
+	}
 
 	if (isValid != "") {
 		$("#errorAlert").show()
