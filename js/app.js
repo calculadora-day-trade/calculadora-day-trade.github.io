@@ -8,8 +8,9 @@ function readFile(input) {
 	var isValid = validadeInput(input.files)
 
 	if (cache) {
-		$("#resultTable tr").remove();
-		$("#resumeTable tr").remove();
+		onloadScreen()
+		$("#resultTable tr#columnResultID").remove();
+		$("#resumeTable tr#columnResumeID").remove();
 	} else {
 		cache = true
 	}
@@ -82,9 +83,9 @@ function printModel(model) {
 	model.sort(compare)
 
  	$.each(model, function (index, m) {
- 		var nTr = "<tr style='background-color: #F4D6D5' !important>"
+ 		var nTr = "<tr id='columnResumeID' style='background-color: #F4D6D5' !important>"
  		if (m.gain) {
- 			nTr = "<tr style='background-color: #D5F4E6' !important>"
+ 			nTr = "<tr id='columnResumeID' style='background-color: #D5F4E6' !important>"
  		}
         
         nTr += "<td>" + m.date + "</td>"
@@ -109,7 +110,7 @@ function printResult(model) {
 	var result = [calculate(model)]
 
 	$.each(result, function (index, r) {
- 		var nTr = "<tr style='background-color: #d5f3f4' !important>"
+ 		var nTr = "<tr id='columnResultID' style='background-color: #d5f3f4' !important>"
         
         nTr += "<td>" + format(r.grossValue) + "</td>"
         nTr += "<td>" + format(r.totalFees) + "</td>"
