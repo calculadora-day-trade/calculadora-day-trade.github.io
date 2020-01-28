@@ -38,6 +38,10 @@ function startReadFile(files) {
 	}
 }
 
+function validBroker(text) {
+	return text.toString().includes("TERRA")
+}
+
 /**
  * Metodo responsavel em validar o anexo
  * @param input Files
@@ -102,16 +106,24 @@ function printResult(model) {
 	$.each(result, function (index, r) {
  		var nTr = "<tr style='background-color: #d5f3f4' !important>"
         
-        nTr += "<td>" + "R$ " + r.grossValue + "</td>"
-        nTr += "<td>" + "R$ " + r.totalFees + "</td>"
-        nTr += "<td>" + "R$ " + r.totalIRRF + "</td>"
-        nTr += "<td>" + "R$ " + r.total + "</td>"
+        nTr += "<td>" + format(r.grossValue) + "</td>"
+        nTr += "<td>" + format(r.totalFees) + "</td>"
+        nTr += "<td>" + format(r.totalIRRF) + "</td>"
+        nTr += "<td>" + format(r.total) + "</td>"
         nTr += "</tr>"
 
         $(nTr).appendTo('#resultTable')
     })
 
 	$('#overlay').fadeOut()
+}
+
+function format(value) {
+	if (value.toString().includes("-")) {
+		return "- R$ " + value.toString().replace("-","").trim()
+	} else {
+		return "R$ " + value
+	}
 }
 
 /**

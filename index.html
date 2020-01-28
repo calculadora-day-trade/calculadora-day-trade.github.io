@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
 	<link rel="stylesheet" href="css/file.css" />
+	<link rel="stylesheet" href="css/loading.css" />
 
 	<!-- JS -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
@@ -47,12 +48,13 @@
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
 
-		<p class="default-text">Arraste ou clique abaixo para anexar as notas de negociação</p>
+		<!-- <p class="default-text">Arraste ou clique abaixo para anexar as notas de negociação</p> -->
 
 		<!-- PAINEL PARA DRAG AND DROP -->
-		<div class="form-group files">
-			<input type="file" class="form-control" onchange="readFile(this)" multiple="">
-		</div>
+		<div class="custom-file">
+			<input type="file" class="custom-file-input" id="inputGroupFile04" onchange="readFile(this)" multiple="">
+			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique abaixo para anexar as notas de negociação</label>
+		</div>		
 
 		<br/>
 
