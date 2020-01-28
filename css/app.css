@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+}
+
+#main-container {
+	min-height: 40%;
+}
+
 .header {
 	background: #2C2C2C;
 	padding-bottom: 20px;
@@ -5,27 +13,27 @@
 }
 
 .header-title {
+	font-family: monaco;
 	color: #FFFFFF;
 	font-size: 56px !important;
-	font-family: monaco;
 }
 
 .header-subtitle {
-	color: #FFFFFF;
 	font-family: monaco;
+	color: #FFFFFF;
 	font-size: 18px !important;
 }
 
 .header-description {
-	color: #FFFFFF;
 	font-family: monaco;
+	color: #FFFFFF;
 	font-size: 14px !important;
 }
 
 .default-text {
+	font-family: monaco;
 	color: #4C4C4C;
 	font-size: 20px !important;
-	font-family: monaco;
 }
 
 .default-color {
@@ -33,20 +41,20 @@
 	color: #4C4C4C;
 }
 
-#footer {
+.footer {
 	background: #2C2C2C;
 	padding-top: 18px;
 	padding-bottom: 8px;
 }
 
 #footerLabel {
-	color: #FFFFFF;
 	font-family: monaco;
+	color: #FFFFFF;
 }
 
 #errorAlert {
-	opacity: 100 !important;
 	font-family: monaco;
+	opacity: 100 !important;
 }
 
 .table {
