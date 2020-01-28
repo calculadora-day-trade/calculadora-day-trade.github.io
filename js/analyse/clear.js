@@ -13,7 +13,7 @@ function analyseClearCorretora(finalString) {
 	net = net.toString().split("|")[3].trim().split(" ")[1]
 
 	var operationType = CLEAR_CORRETORA.CREDIT
-	if (formatResult(irrf[0])== "0,00") {
+	if (formatResult(irrf)== "0,00") {
 		operationType = CLEAR_CORRETORA.DEBIT
 	}
 
