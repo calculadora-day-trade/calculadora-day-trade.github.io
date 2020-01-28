@@ -52,6 +52,10 @@ function analyse(text) {
 	return notes
 }
 
+/**
+ * Retorna true caso a operaçao seja gain ou false se foi loss
+ * @param operationType String
+ */
 function isCredit(operationType) {
 	return operationType == TERRA_CORRETORA.CREDIT
 }

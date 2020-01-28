@@ -38,10 +38,6 @@ function startReadFile(files) {
 	}
 }
 
-function validBroker(text) {
-	return text.toString().includes("TERRA")
-}
-
 /**
  * Metodo responsavel em validar o anexo
  * @param input Files
@@ -58,7 +54,7 @@ function validadeInput(files) {
 				isValid = "Formato de arquivo incorreto."
 				break
 
-			} else if ((files[i].size / 1000) > 100) {
+			} else if ((files[i].size / 1000) > 500) {
 				isValid = "Tamanho do arquivo maior que o máximo permitido."
 			}
 		}
@@ -116,27 +112,6 @@ function printResult(model) {
     })
 
 	$('#overlay').fadeOut()
-}
-
-function format(value) {
-	if (value.toString().includes("-")) {
-		return "- R$ " + value.toString().replace("-","").trim()
-	} else {
-		return "R$ " + value
-	}
-}
-
-/**
- * Metodo responsavel por ordenar a lista
- */
-function compare(a, b) {
-	if (a.date < b.date) {
-		return -1
-	}
-	if (a.date > b.date) {
-		return 1
-	}
-	return 0
 }
 
 /**
