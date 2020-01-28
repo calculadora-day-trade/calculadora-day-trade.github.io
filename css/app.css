@@ -6,6 +6,11 @@ html, body {
 	min-height: 40%;
 }
 
+#summary {
+	font-size: 12px;
+	line-height: 0%;
+}
+
 .header {
 	background: #2C2C2C;
 	padding-bottom: 20px;

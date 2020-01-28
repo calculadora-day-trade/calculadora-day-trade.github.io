@@ -116,6 +116,7 @@ function printResult(model) {
         nTr += "<td>" + format(r.totalFees) + "</td>"
         nTr += "<td>" + format(r.totalIRRF) + "</td>"
         nTr += "<td>" + format(r.total) + "</td>"
+        nTr += "<td>" + format(r.ir) + "</td>"
         nTr += "</tr>"
 
         $(nTr).appendTo('#resultTable')

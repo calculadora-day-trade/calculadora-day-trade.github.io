@@ -22,13 +22,18 @@ function calculate(model) {
 	}
 
 	var total = totalNet + totalIRRF
+	var ir = 0
+	if (total > 0) {
+		ir = ((total * 20) / 100) - totalIRRF
+	}
 
 	var result = {
 		grossValue: totalGross,
 		netValue: totalNet,
 		totalFees: totalFees,
 		totalIRRF: totalIRRF,
-		total: total
+		total: total,
+		ir: ir
 	}
 
 	return result
