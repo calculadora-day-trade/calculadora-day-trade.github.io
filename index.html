@@ -28,9 +28,6 @@
 </head>
 <body onload="onloadScreen()">
 
-	<!-- https://www.w3schools.com/bootstrap/bootstrap_examples.asp -->
-	<!-- https://www.dropzonejs.com/#installation -->
-
 	<div class="header">
 		<div class="container">
 			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
@@ -52,7 +49,7 @@
 		<!-- PAINEL PARA DRAG AND DROP -->
 		<div class="custom-file">
 			<input type="file" class="custom-file-input" id="inputGroupFile04" onchange="readFile(this)" multiple="">
-			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar as notas de negociação</label>
+			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar <b>todas</b> as notas de negociação que deseja analisar.</label>
 		</div>		
 
 		<br/>
@@ -60,7 +57,6 @@
 		<!-- RESULTADO -->
 		<div id="result">
 			<p class="default-text">Veja o seu resultado:</p>
-
 			<table class="table table-bordered table-striped" id="resultTable">
 				<thead>
 					<tr>
@@ -70,15 +66,12 @@
 						<th>Líquido (Bruto - Taxas)</th>
 					</tr>
 				</thead>
-				<tbody>
-				</tbody>
 			</table>
 		</div>
 
 		<!-- RESUMO -->
 		<div id="resume">
 			<p class="default-text">Veja o seu resumo das notas de negociação:</p>
-
 			<table class="table table-bordered table-striped" id="resumeTable">
 				<thead>
 					<tr>
@@ -90,8 +83,6 @@
 						<th>Lucro Líquido</th>
 					</tr>
 				</thead>
-				<tbody>
-				</tbody>
 			</table>
 		</div>
 	</div>
@@ -102,11 +93,9 @@
 	</div>
 	
 	<!-- FOOTER -->
-
 	<footer class="footer" >
 		<div class="container">
 			<div class="container-fluid text-center">
-
 				<div class="row">
 					<div id="footerLabel">
 						<h5 class="text-uppercase font-weight-bold">Entre em Contato</h5>
@@ -114,7 +103,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="footer-copyright text-center py-3" id="footerLabel">
 				<p>Copyright © Thales Marega 2020</p>
 			</div>
