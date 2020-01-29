@@ -12,16 +12,22 @@ function readPDF(file, callback) {
 		getText(typedarray).then(function(text) {
 			callback(text);
 		}, function(reason) {
-			$("#errorAlert").show()
-			document.getElementById("errorAlert").innerHTML = reason
-			
 			$('#overlay').fadeOut()
+			$("#errorAlert").show()
+			document.getElementById("errorAlert").innerHTML = reason.message
+			
 			console.error(reason)
 		})
 
 		function getText(typedarray) {
 			var pdf = PDFJS.getDocument(typedarray)
 			
+			pdf.onPassword = function passwordNeeded(updateCallback, reason) {
+				savedUpdateCallback = updateCallback;
+				var pass = document.getElementById("password").value
+				savedUpdateCallback(pass)
+			};
+
 			return pdf.then(function(pdf) {
 				var maxPages = pdf.pdfInfo.numPages;
 				var countPromises = []

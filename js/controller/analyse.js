@@ -14,5 +14,8 @@ function analyse(text) {
 		
 	} else if (finalString.includes("RICO")) {
 		return analyseRicoCorretora(finalString)
+	
+	} else if (finalString.includes("XP INVESTIMENTOS")) {
+		return analyseXPCorretora(finalString)
 	}
 }

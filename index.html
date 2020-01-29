@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="js/analyse/terra.js"></script>
 	<script type="text/javascript" src="js/analyse/clear.js"></script>
 	<script type="text/javascript" src="js/analyse/rico.js"></script>
+	<script type="text/javascript" src="js/analyse/xp.js"></script>
 	<script type="text/javascript" src="js/models/notes.js"></script>
 	<script type="text/javascript" src="js/models/result.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
@@ -36,7 +37,7 @@
 		<div class="container">
 			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
 			<p class="header-subtitle">Chega de planilhas! Agora ficou muito mais fácil de calcular o IR do seu day trade.</p><br/>
-			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span id="brokerName">TERRA</span>, <span id="brokerName">CLEAR</span> e <span id="brokerName">RICO</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
+			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span id="brokerName">TERRA</span>, <span id="brokerName">CLEAR</span>, <span id="brokerName">RICO</span> e <span id="brokerName">XP</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
 		</div>
 	</div>
 
@@ -49,6 +50,16 @@
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
+
+		<!-- SENHA -->
+		<label>Digite a senha abaixo caso a nota de negociação precisa de senha para abrir</label>
+		<div class="text-center">           
+			<div class="input-group">
+				<input type="password" class="form-control pwd" id="password">
+			</div>
+		</div>  
+
+    	<br/>
 
 		<!-- PAINEL PARA DRAG AND DROP -->
 		<div class="custom-file">
@@ -113,13 +124,13 @@
 				<div class="row">
 					<div id="footerLabel">
 						<h5 class="text-uppercase font-weight-bold">Entre em Contato</h5>
-						<p>Se você tem alguma crítica, dúvida, elogio ou sugestão entre em contato através do e-mail: thales.bm92@gmail.com</p>
+						<p>Se você tem alguma sugestão, dúvida ou elogio entre em contato através do e-mail: thales.bm92@gmail.com</p>
 					</div>
 				</div>
 			</div>
 			<div class="footer-copyright text-center py-3" id="footerLabel">
 				<p>Copyright © Thales Marega 2020</p>
-				<p>Versão: 1.1.1 (BETA)</p>
+				<p>Versão: 1.2.0 (BETA)</p>
 			</div>
 		</div>
 	</footer>
