@@ -37,7 +37,7 @@
 		<div class="container">
 			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
 			<p class="header-subtitle">Chega de planilhas! Agora ficou muito mais fácil de calcular o IR do seu day trade.</p><br/>
-			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span id="brokerName">TERRA</span>, <span id="brokerName">CLEAR</span>, <span id="brokerName">RICO</span> e <span id="brokerName">XP</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
+			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span id="broker-name">TERRA</span>, <span id="broker-name">CLEAR</span>, <span id="broker-name">RICO</span> e <span id="broker-name">XP</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
 		</div>
 	</div>
 
@@ -52,13 +52,30 @@
 		</div>
 
 		<!-- SENHA -->
-		<label>Digite a senha abaixo caso a nota de negociação precisa de senha para abrir</label>
+		<label class="informative-text"><u>Senha</u></label><br/>
+		<label>Informe a senha abaixo caso a nota de negociação precisa de senha para abrir.</label>
 		<div class="text-center">           
 			<div class="input-group">
 				<input type="password" class="form-control pwd" id="password">
 			</div>
 		</div>  
 
+		<br/>
+
+		<!-- NOTA UNICA -->
+		<label class="informative-text"><u>Nota de corretagem ÚNICA</u></label><br/>
+		<label>Arquivo ÚNICO com todas as notas de corretagem incluídas (Disponível apenas para a <b>XP Corretora</b>).</label>
+		
+		<br/>
+		
+		<label class="radio-inline">
+			<input type="radio" name="optradio" id="radio-button-yes">SIM
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="optradio" id="radio-button-no" checked>NÃO
+		</label>
+
+    	<br/>
     	<br/>
 
 		<!-- PAINEL PARA DRAG AND DROP -->
@@ -122,13 +139,13 @@
 		<div class="container">
 			<div class="container-fluid text-center">
 				<div class="row">
-					<div id="footerLabel">
+					<div id="footer-label">
 						<h5 class="text-uppercase font-weight-bold">Entre em Contato</h5>
 						<p>Se você tem alguma sugestão, dúvida ou elogio entre em contato através do e-mail: thales.bm92@gmail.com</p>
 					</div>
 				</div>
 			</div>
-			<div class="footer-copyright text-center py-3" id="footerLabel">
+			<div class="footer-copyright text-center py-3" id="footer-label">
 				<p>Copyright © Thales Marega 2020</p>
 				<p>Versão: 1.2.0 (BETA)</p>
 			</div>
