@@ -1,85 +1,118 @@
+/*************************** 
+MAIN
+***************************/
 html, body {
   height: 100%;
 }
-
-#broker-name {
-	color: #DCD427;
-	font-size: 20px;
-}
-
 #main-container {
 	min-height: 40%;
+	margin-top: 20px;
+}
+#error-alert {
+	font-family: monaco;
+	opacity: 100 !important;
 }
 
-#summary {
-	font-size: 12px;
-	line-height: 0%;
-}
-
+/*************************** 
+HEADER
+***************************/
 .header {
 	background: #2C2C2C;
 	padding-bottom: 20px;
 	padding-top: 20px;
 }
-
 .header-title {
 	font-family: monaco;
 	color: #FFFFFF;
 	font-size: 56px !important;
 }
-
 .header-subtitle {
 	font-family: monaco;
 	color: #FFFFFF;
 	font-size: 18px !important;
 }
-
 .header-description {
 	font-family: monaco;
 	color: #FFFFFF;
 	font-size: 14px !important;
 }
-
-.default-text {
-	font-family: monaco;
-	color: #4C4C4C;
-	font-size: 20px !important;
+.header-spotlight {
+	color: #DCD427;
+	font-size: 20px;
 }
 
-.default-color {
-	font-family: monaco;
-	color: #4C4C4C;
-}
-
+/*************************** 
+FOOTER
+***************************/
 .footer {
 	background: #2C2C2C;
 	padding-top: 18px;
 	padding-bottom: 8px;
-}
-
-#footer-label {
 	font-family: monaco;
 	color: #FFFFFF;
 }
 
-#errorAlert {
-	font-family: monaco;
-	opacity: 100 !important;
+/*************************** 
+BODY
+***************************/
+.body-title {
+	color: #4C4C4C;
+	font-size: 20px !important;
+	line-height: 0%;
+	text-decoration: underline;
+	margin-top: 40px;
+}
+.body-description {
+	color: #4C4C4C;
+	font-size: 14px !important;
+}
+.body-item-input {
+	margin-top: -12px;
+}
+#body-summary {
+	color: #4C4C4C;
+	font-size: 12px;
+	line-height: 0%;
 }
 
+/*************************** 
+RADIO BUTTON
+***************************/
+#radio-button-yes {
+	color: #4C4C4C;
+	margin-right: 6px;
+}
+#radio-button-no {
+	color: #4C4C4C;
+	margin-right: 6px;
+	margin-left: 20px;
+}
+
+/*************************** 
+TABLE
+***************************/
 .table {
     table-layout: fixed;
 }
 
-#radio-button-yes {
-	margin-right: 6px;
+/*************************** 
+FILE
+***************************/
+.custom-file {
+	width: 100% !important;
+	height: 200px !important;
+	margin-bottom: 20px;
+	margin-top: 40px;
 }
-
-#radio-button-no {
-	margin-left: 20px;
-	margin-right: 6px;
+.custom-file-label {
+	width: 100% !important;
+	height: 200px !important;
+	margin-bottom: 20px;
+	text-align: center;
+	padding: 80px 0;
 }
-
-.informative-text {
-	font-size: 20px !important;
+.custom-file-input {
+	width: 100% !important;
+	height: 200px !important;
+	margin-bottom: 20px;
 }

@@ -13,8 +13,8 @@ function readPDF(file, callback) {
 			callback(text);
 		}, function(reason) {
 			$('#overlay').fadeOut()
-			$("#errorAlert").show()
-			document.getElementById("errorAlert").innerHTML = reason.message
+			$("#error-alert").show()
+			document.getElementById("error-alert").innerHTML = reason.message
 			
 			console.error(reason)
 		})

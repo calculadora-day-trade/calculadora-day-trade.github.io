@@ -8,7 +8,6 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="css/file.css" />
 	<link rel="stylesheet" href="css/loading.css" />
 
 	<!-- JS -->
@@ -37,46 +36,44 @@
 		<div class="container">
 			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
 			<p class="header-subtitle">Chega de planilhas! Agora ficou muito mais fácil de calcular o IR do seu day trade.</p><br/>
-			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span id="broker-name">TERRA</span>, <span id="broker-name">CLEAR</span>, <span id="broker-name">RICO</span> e <span id="broker-name">XP</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
+			<p class="header-description">Em poucos segundos você consegue calcular todas suas operações do mês, simples, fácil e rápido! <br/>Atualmente está disponível para as corretoras <span class="header-spotlight">TERRA</span>, <span class="header-spotlight">CLEAR</span>, <span class="header-spotlight">RICO</span> e <span class="header-spotlight">XP</span>, mas fique atento que em breve estará disponível para mais corretoras.</p>
 		</div>
 	</div>
 
 	<div class="container" id="main-container">
 		
-		<br/>
+		<!-- <br/> -->
 
 		<!-- ALERTAS -->
-		<div class="alert alert-danger alert-dismissible fade in" id="errorAlert">
+		<div class="alert alert-danger alert-dismissible fade in" id="error-alert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
 
 		<!-- SENHA -->
-		<label class="informative-text"><u>Senha</u></label><br/>
-		<label>Informe a senha abaixo caso a nota de negociação precisa de senha para abrir.</label>
-		<div class="text-center">           
-			<div class="input-group">
-				<input type="password" class="form-control pwd" id="password">
-			</div>
-		</div>  
-
-		<br/>
+		<div>
+			<p class="body-title">Senha</p>
+			<p class="body-description">Informe a senha abaixo caso a nota de negociação precisa de senha para abrir.</p>
+			<div class="text-center">           
+				<div class="input-group body-item-input">
+					<input type="password" class="form-control pwd" id="password">
+				</div>
+			</div>  
+		</div>
 
 		<!-- NOTA UNICA -->
-		<label class="informative-text"><u>Nota de corretagem ÚNICA</u></label><br/>
-		<label>Arquivo ÚNICO com todas as notas de corretagem incluídas (Disponível apenas para a <b>XP Corretora</b>).</label>
-		
-		<br/>
-		
-		<label class="radio-inline">
-			<input type="radio" name="optradio" id="radio-button-yes">SIM
-		</label>
-		<label class="radio-inline">
-			<input type="radio" name="optradio" id="radio-button-no" checked>NÃO
-		</label>
-
-    	<br/>
-    	<br/>
+		<div>
+			<p class="body-title">Nota de corretagem ÚNICA</p>
+			<p class="body-description">Arquivo ÚNICO com todas as notas de corretagem incluídas (Disponível apenas para a <b>XP Corretora</b>).</p>
+			<div class="body-item-input">
+				<label class="radio-inline">
+					<input type="radio" name="optradio" id="radio-button-yes">Sim
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="optradio" id="radio-button-no" checked>Não
+				</label>
+			</div>
+		</div>
 
 		<!-- PAINEL PARA DRAG AND DROP -->
 		<div class="custom-file">
@@ -84,11 +81,10 @@
 			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar <b>todas</b> as notas de negociação que deseja analisar.</label>
 		</div>		
 
-		<br/>
-
 		<!-- RESULTADO -->
 		<div id="result">
-			<p class="default-text">Veja o seu resultado:</p>
+			<p class="body-title">Resultado</p>
+			<p class="body-description">Segue abaixo um consolidado com todas as notas de negociações anexadas.</p>
 			<table class="table table-bordered table-striped" id="resultTable">
 				<thead>
 					<tr>
@@ -101,7 +97,7 @@
 				</thead>
 			</table>
 
-			<div id="summary">
+			<div id="body-summary">
 				<p><b>Taxas:</b> Operacional e Taxa registro BM&F</p>
 				<p><b>IRRF:</b> IR descontado na fonte (1%)</p>
 				<p><b>Líquido:</b> (Bruto - Taxas)</p>
@@ -109,11 +105,10 @@
 			</div>
 		</div>
 
-		<br/>
-
 		<!-- RESUMO -->
 		<div id="resume">
-			<p class="default-text">Veja o seu resumo das notas de negociação:</p>
+			<p class="body-title">Resumo</p>
+			<p class="body-description">Segue abaixo um consolidado com todas as notas de negociações anexadas.</p>
 			<table class="table table-bordered table-striped" id="resumeTable">
 				<thead>
 					<tr>
@@ -136,7 +131,7 @@
 	
 	<!-- FOOTER -->
 	<footer class="footer text-center" >
-		<div id="footer-label">
+		<div>
 			<h5 class="text-uppercase">Entre em Contato</h5>
 			<p>Se você tem alguma sugestão, dúvida ou elogio entre em contato através do e-mail: thales.bm92@gmail.com</p>
 			<p>Copyright © Thales Marega 2020</p>

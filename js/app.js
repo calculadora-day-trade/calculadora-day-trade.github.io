@@ -6,7 +6,7 @@ var cache = false
  */
 function readFile(input) {
 	var isValid = validadeInput(input.files)
-
+	
 	if (cache) {
 		onloadScreen()
 		$("#resultTable tr#columnResultID").remove();
@@ -16,8 +16,9 @@ function readFile(input) {
 	}
 
 	if (isValid != "") {
-		$("#errorAlert").show()
-		document.getElementById("errorAlert").innerHTML = isValid
+		$("#error-alert").show()
+		document.getElementById("inputGroupFile04").value = "";
+		document.getElementById("error-alert").innerHTML = isValid
 
 	} else {
 		startReadFile(input.files)
@@ -29,7 +30,7 @@ function readFile(input) {
  * @param input Files
  */
 function startReadFile(files) {
-	$("#errorAlert").hide()
+	$("#error-alert").hide()
 	$('#overlay').fadeIn()
 
 	var listLength = files.length
@@ -55,8 +56,13 @@ function startReadFile(files) {
 function validadeInput(files) {
 	var isValid = ""
 
+	var uniqueNoteSelected = document.getElementById("radio-button-yes").checked
+
 	if (files.length > 30) {
 		isValid = "Número máximo de arquivos suportados."
+
+	} else if (uniqueNoteSelected && files.length > 1) {
+		isValid = "Não é possivel anexar mais que uma nota de corretagem quando a opção Nota Única está selecionada."
 
 	} else {
 		for (i = 0; i < files.length; i++) {
@@ -64,8 +70,10 @@ function validadeInput(files) {
 				isValid = "Formato de arquivo incorreto."
 				break
 
-			} else if ((files[i].size / 1000) > 500) {
-				isValid = "Tamanho do arquivo maior que o máximo permitido."
+			} else if (!uniqueNoteSelected) {
+				if ((files[i].size / 1000) > 500) {
+					isValid = "Tamanho do arquivo maior que o máximo permitido."
+				}
 			}
 		}
 	}
@@ -129,7 +137,7 @@ function printResult(model) {
  * Metodo que esconde varios componentes quando carrega a tela
  */
 function onloadScreen() {
-	$("#errorAlert").hide()
+	$("#error-alert").hide()
 	$("#resume").hide()
 	$("#result").hide()
 }
