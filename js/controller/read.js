@@ -32,20 +32,25 @@ function readPDF(file, callback) {
 				var maxPages = pdf.pdfInfo.numPages;
 				var countPromises = []
 
-				// for (var j = 1; j <= maxPages; j++) {
-					var page = pdf.getPage(maxPages)
+				var uniqueNoteSelected = document.getElementById("radio-button-yes").checked
+				if (uniqueNoteSelected) {
+					for (var j = 1; j <= maxPages; j++) {
+						var page = pdf.getPage(j)
 
-					var txt = ""
-					countPromises.push(page.then(function(page) {
-						var textContent = page.getTextContent()
+						var txt = ""
+						countPromises.push(page.then(function(page) {
+							var textContent = page.getTextContent()
 
-						return textContent.then(function(text) {
-							return text.items.map(function(s) {
-								return s.str
-							}).join('') 
-						})
-					}))
-				// }
+							return textContent.then(function(text) {
+								return text.items.map(function(s) {
+									return s.str
+								}).join('') 
+							})
+						}))
+					}
+				} else {
+					countPromises = readLastPage(maxPages, pdf)
+				}
 
 				return Promise.all(countPromises).then(function(texts) {
 					return texts.join('')
@@ -54,4 +59,21 @@ function readPDF(file, callback) {
 		}
 	}
 	fileReader.readAsArrayBuffer(file)
+}
+
+function readLastPage(maxPages, pdf) {
+	var countPromises = []
+	var page = pdf.getPage(maxPages)
+
+	var txt = ""
+	countPromises.push(page.then(function(page) {
+		var textContent = page.getTextContent()
+
+		return textContent.then(function(text) {
+			return text.items.map(function(s) {
+				return s.str
+			}).join('') 
+		})
+	}))
+	return countPromises
 }
