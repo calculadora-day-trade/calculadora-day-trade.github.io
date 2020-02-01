@@ -9,9 +9,9 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="css/loading.css" />
 
 	<!-- JS -->
+	<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
 	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -25,6 +25,7 @@
 	<script type="text/javascript" src="js/analyse/xp.js"></script>
 	<script type="text/javascript" src="js/models/notes.js"></script>
 	<script type="text/javascript" src="js/models/result.js"></script>
+	<script type="text/javascript" src="js/export.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 
@@ -33,6 +34,7 @@
 </head>
 <body onload="onloadScreen()">
 
+	<!-- HEADER -->
 	<div class="header">
 		<div class="container">
 			<p class="header-title">Calculadora de IR Day Trade (WIN)</p><br/>
@@ -80,46 +82,54 @@
 			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar <b>todas</b> as notas de negociação que deseja analisar.</label>
 		</div>		
 
-		<!-- RESULTADO -->
-		<div id="result">
-			<p class="body-title">Resultado</p>
-			<p class="body-description">Segue abaixo um consolidado com todas as notas de negociações anexadas.</p>
-			<table class="table table-bordered table-striped" id="resultTable">
-				<thead>
-					<tr>
-						<th>Bruto</th>
-						<th>Taxas</th>
-						<th>IRRF</th>
-						<th>Líquido</th>
-						<th>IR a Pagar</th>
-					</tr>
-				</thead>
-			</table>
-
-			<div id="body-summary">
-				<p><b>Taxas:</b> Operacional e Taxa registro BM&F</p>
-				<p><b>IRRF:</b> IR descontado na fonte (1%)</p>
-				<p><b>Líquido:</b> (Bruto - Taxas)</p>
-				<p><b>IR a Pagar:</b> (Líquido x 20% - IRRF)</p>
-			</div>
+		<!-- EXPORT -->
+		<div id="export-div">
+			<button type="button" class="btn btn-outline-dark" onclick="exportToPDF()">PDF</button>
+			<button type="button" class="btn btn-outline-success">Excel</button>
 		</div>
 
-		<!-- RESUMO -->
-		<div id="resume">
-			<p class="body-title">Resumo</p>
-			<p class="body-description">Segue abaixo um resumo de todas as notas de negociação.</p>
-			<table class="table table-bordered table-striped" id="resumeTable">
-				<thead>
-					<tr>
-						<th>Data</th>
-						<th>Número da Nota</th>
-						<th>Valor Bruto</th>
-						<th>Taxas</th>
-						<th>IRRF</th>
-						<th>Lucro Líquido</th>
-					</tr>
-				</thead>
-			</table>
+		<!-- RESULTADO -->
+		<div id="tables">
+			<div id="result">
+				<p class="body-title">Resultado</p>
+				<p class="body-description">Segue abaixo um consolidado com todas as notas de negociações anexadas.</p>
+				<table class="table table-bordered table-striped" id="resultTable">
+					<thead>
+						<tr>
+							<th>Bruto</th>
+							<th>Taxas</th>
+							<th>IRRF</th>
+							<th>Líquido</th>
+							<th>IR a Pagar</th>
+						</tr>
+					</thead>
+				</table>
+
+				<div id="body-summary">
+					<p><b>Taxas:</b> Operacional e Taxa registro BM&F</p>
+					<p><b>IRRF:</b> IR descontado na fonte (1%)</p>
+					<p><b>Líquido:</b> (Bruto - Taxas)</p>
+					<p><b>IR a Pagar:</b> (Líquido x 20% - IRRF)</p>
+				</div>
+			</div>
+
+			<!-- RESUMO -->
+			<div id="resume">
+				<p class="body-title">Resumo</p>
+				<p class="body-description">Segue abaixo um resumo de todas as notas de negociação.</p>
+				<table class="table table-bordered table-striped" id="resumeTable">
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Número da Nota</th>
+							<th>Valor Bruto</th>
+							<th>Taxas</th>
+							<th>IRRF</th>
+							<th>Lucro Líquido</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
 		</div>
 	</div>
 

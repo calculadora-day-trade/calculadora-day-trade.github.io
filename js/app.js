@@ -96,6 +96,7 @@ function validadeInput(files) {
 function printModel(model) {
 	$("#resume").show()
 	$("#result").show()
+	$("#export-div").show()
 
 	model.sort(compare)
 
@@ -149,4 +150,5 @@ function onloadScreen() {
 	$("#error-alert").hide()
 	$("#resume").hide()
 	$("#result").hide()
+	$("#export-div").hide()
 }
