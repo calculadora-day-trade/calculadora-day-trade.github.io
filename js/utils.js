@@ -1,4 +1,8 @@
 
+function isUniqueNote() {
+	return document.getElementById("radio-button-yes").checked
+}
+
 /**
  * Metodo responsavel por ordenar a lista
  */

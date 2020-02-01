@@ -32,8 +32,7 @@ function readPDF(file, callback) {
 				var maxPages = pdf.pdfInfo.numPages;
 				var countPromises = []
 
-				var uniqueNoteSelected = document.getElementById("radio-button-yes").checked
-				if (uniqueNoteSelected) {
+				if (isUniqueNote()) {
 					for (var j = 1; j <= maxPages; j++) {
 						var page = pdf.getPage(j)
 

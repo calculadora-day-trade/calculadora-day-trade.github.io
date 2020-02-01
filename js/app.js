@@ -34,14 +34,25 @@ function startReadFile(files) {
 	$('#overlay').fadeIn()
 
 	var listLength = files.length
-	var model = []
+	
+	var model
+	if (!isUniqueNote()) {
+		model = []	
+	}
+	
 	var count = 0
 
 	for (i = 0; i < listLength; i++) {
 		readPDF(files[i], function(text) {
 			count++
 
-			model.push(analyse(text))
+			var result = analyse(text)
+			if (!isUniqueNote()) {
+				model.push(result)
+			} else {
+				model = result
+			}
+			
 			if (count == listLength) {
 				printModel(model)
 			}
@@ -56,12 +67,10 @@ function startReadFile(files) {
 function validadeInput(files) {
 	var isValid = ""
 
-	var uniqueNoteSelected = document.getElementById("radio-button-yes").checked
-
 	if (files.length > 30) {
 		isValid = "Número máximo de arquivos suportados."
 
-	} else if (uniqueNoteSelected && files.length > 1) {
+	} else if (isUniqueNote() && files.length > 1) {
 		isValid = "Não é possivel anexar mais que uma nota de corretagem quando a opção Nota Única está selecionada."
 
 	} else {
@@ -70,7 +79,7 @@ function validadeInput(files) {
 				isValid = "Formato de arquivo incorreto."
 				break
 
-			} else if (!uniqueNoteSelected) {
+			} else if (!isUniqueNote()) {
 				if ((files[i].size / 1000) > 500) {
 					isValid = "Tamanho do arquivo maior que o máximo permitido."
 				}
