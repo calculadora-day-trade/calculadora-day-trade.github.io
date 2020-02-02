@@ -31,8 +31,6 @@
 	<script type="text/javascript" src="js/export.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/FileSaver.js"></script>
-	<script type="text/javascript" src="js/tableExport.js"></script>
 
 	<title>Calculadora de IR</title>
 
@@ -56,36 +54,74 @@
 			Ocorreu uma falha ao realizar a leitura das notas de negociação!
 		</div>
 
-		<!-- SENHA -->
-		<div>
-			<p class="body-title">Senha</p>
-			<p class="body-description">Informe a senha abaixo caso a nota de negociação precisa de senha para abrir.</p>
-			<div class="text-center">           
-				<div class="input-group body-item-input">
-					<input type="password" class="form-control pwd" id="password">
-				</div>
-			</div>  
-		</div>
 
-		<!-- NOTA UNICA -->
-		<div>
-			<p class="body-title">Nota de corretagem ÚNICA</p>
-			<p class="body-description">Arquivo ÚNICO com todas as notas de corretagem incluídas (Disponível apenas para a <b>XP Corretora</b>).</p>
-			<div class="body-item-input">
-				<label class="radio-inline">
-					<input type="radio" name="optradio" id="radio-button-yes">Sim
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="optradio" id="radio-button-no" checked>Não
-				</label>
+		<div class="row">
+		    <div class="col">
+
+				<!-- SENHA -->
+				<div>
+					<p class="body-title">Senha</p>
+					<p class="body-description">Informe a senha abaixo caso a nota de negociação precisa de senha para abrir.</p>
+					<div class="text-center">           
+						<div class="input-group body-item-input">
+							<input type="password" class="form-control pwd" id="password">
+						</div>
+					</div>  
+				</div>
+
+				<!-- NOTA UNICA -->
+				<div>
+					<p class="body-title">Nota de corretagem ÚNICA</p>
+					<p class="body-description">Arquivo ÚNICO com todas as notas de corretagem incluídas (Disponível apenas para a <b>XP Corretora</b>).</p>
+					<div class="body-item-input">
+						<label class="radio-inline">
+							<input type="radio" name="optradio" id="radio-button-yes">Sim
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="optradio" id="radio-button-no" checked>Não
+						</label>
+					</div>
+				</div>
+
+				<!-- PAINEL PARA DRAG AND DROP -->
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" id="inputGroupFile04" onchange="readFile(this)" multiple="">
+					<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar <b>todas</b> as notas de negociação que deseja analisar.</label>
+				</div>	
+			</div>	
+
+			<div class="col">
+				<!-- NOTAS DE NEGOCIAÇÃO -->
+				<p class="body-title">Notas de Negociação</p>
+				<p class="body-description">Veja exemplos das notas de negociações que conseguimos fazer a análise.</p>
+
+				<div class="row justify-content-center">
+		    		<div class="col-4">
+			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/rico.png" class="img-responsive" alt=""/>
+			            </a>
+			        </div>
+			        <div class="col-4">
+			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/xp.png" class="img-responsive" alt=""/>
+			            </a>
+ 					</div>
+ 				</div>
+				
+				<div class="row justify-content-center">
+		    		<div class="col-4">
+			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/clear.png" class="img-responsive" alt=""/>
+			            </a>
+			        </div>
+			        <div class="col-4">
+			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/terra.png" class="img-responsive" alt=""/>
+			            </a>
+ 					</div>
+ 				</div>
 			</div>
 		</div>
-
-		<!-- PAINEL PARA DRAG AND DROP -->
-		<div class="custom-file">
-			<input type="file" class="custom-file-input" id="inputGroupFile04" onchange="readFile(this)" multiple="">
-			<label class="custom-file-label" for="inputGroupFile04">Arraste ou clique aqui para anexar <b>todas</b> as notas de negociação que deseja analisar.</label>
-		</div>		
 
 		<!-- EXPORT -->
 		<div id="export-div">
