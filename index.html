@@ -2,6 +2,9 @@
 <html>
 <head>
 
+<meta http-equiv="content-type" content="text/plain; charset=UTF-8"/>
+
+
 	<!-- ICON -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -11,23 +14,25 @@
 	<link rel="stylesheet" href="css/app.css" />
 
 	<!-- JS -->
-	<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
-	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/controller/read.js"></script>
-	<script type="text/javascript" src="js/controller/analyse.js"></script>
-	<script type="text/javascript" src="js/controller/find.js"></script>
+	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/controller/calculate.js"></script>
+	<script type="text/javascript" src="js/controller/analyse.js"></script>	
+	<script type="text/javascript" src="js/controller/find.js"></script>
+	<script type="text/javascript" src="js/controller/read.js"></script>
 	<script type="text/javascript" src="js/analyse/terra.js"></script>
 	<script type="text/javascript" src="js/analyse/clear.js"></script>
 	<script type="text/javascript" src="js/analyse/rico.js"></script>
 	<script type="text/javascript" src="js/analyse/xp.js"></script>
-	<script type="text/javascript" src="js/models/notes.js"></script>
 	<script type="text/javascript" src="js/models/result.js"></script>
+	<script type="text/javascript" src="js/models/notes.js"></script>
 	<script type="text/javascript" src="js/export.js"></script>
 	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/FileSaver.js"></script>
+	<script type="text/javascript" src="js/tableExport.js"></script>
 
 	<title>Calculadora de IR</title>
 
@@ -85,7 +90,7 @@
 		<!-- EXPORT -->
 		<div id="export-div">
 			<button type="button" class="btn btn-outline-dark" onclick="exportToPDF()">PDF</button>
-			<button type="button" class="btn btn-outline-success">Excel</button>
+			<!-- <button type="button" class="btn btn-outline-success" onclick="exportToExcel()">Excel</button> -->
 		</div>
 
 		<!-- RESULTADO -->

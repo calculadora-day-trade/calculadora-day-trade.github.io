@@ -1,4 +1,6 @@
-
+/**
+ * Verifica se é uma nota unica de corretagem 
+ */
 function isUniqueNote() {
 	return document.getElementById("radio-button-yes").checked
 }
