@@ -2,9 +2,6 @@
 <html>
 <head>
 
-<meta http-equiv="content-type" content="text/plain; charset=UTF-8"/>
-
-
 	<!-- ICON -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -14,10 +11,10 @@
 	<link rel="stylesheet" href="css/app.css" />
 
 	<!-- JS -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.87/pdf.js"></script>
 	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/controller/calculate.js"></script>
 	<script type="text/javascript" src="js/controller/analyse.js"></script>	
 	<script type="text/javascript" src="js/controller/find.js"></script>
@@ -93,41 +90,82 @@
 			<div class="col">
 				<!-- NOTAS DE NEGOCIAÇÃO -->
 				<p class="body-title">Notas de Negociação</p>
-				<p class="body-description">Veja exemplos das notas de negociações que conseguimos fazer a análise.</p>
+				<p class="body-description">Selecione a corretora abaixo para visualizar os modelos das notas de negociações que conseguimos fazer a análise.</p>
 
 				<div class="row justify-content-center">
 		    		<div class="col-4">
-			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
-			                <img src="img/broker/rico.png" class="img-responsive" alt=""/>
+			            <a href="#modalClear" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/clear.png" class="img-responsive" alt=""/>
 			            </a>
 			        </div>
 			        <div class="col-4">
-			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
+			            <a href="#modalXP" class="portfolio-link" data-toggle="modal"> 
 			                <img src="img/broker/xp.png" class="img-responsive" alt=""/>
+			            </a>
+ 					</div>
+ 					<div class="col-4">
+			            <a href="#modalTerra" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/terra.png" class="img-responsive" alt=""/>
 			            </a>
  					</div>
  				</div>
 				
 				<div class="row justify-content-center">
 		    		<div class="col-4">
-			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
-			                <img src="img/broker/clear.png" class="img-responsive" alt=""/>
+			            <a href="#modalRico" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/rico.png" class="img-responsive" alt=""/>
 			            </a>
 			        </div>
-			        <div class="col-4">
-			            <a href="#portfolioModalOnboarding" class="portfolio-link" data-toggle="modal"> 
-			                <img src="img/broker/terra.png" class="img-responsive" alt=""/>
-			            </a>
- 					</div>
  				</div>
 			</div>
 		</div>
 
 		<!-- EXPORT -->
 		<div id="export-div">
+			<!-- <p class="body-title">Exportar</p> -->
 			<button type="button" class="btn btn-outline-dark" onclick="exportToPDF()">PDF</button>
 			<!-- <button type="button" class="btn btn-outline-success" onclick="exportToExcel()">Excel</button> -->
 		</div>
+
+		<!-- MODAL XP -->
+		<div class="portfolio-modal modal fade" id="modalXP" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="modal-dialog modal-content container row text-center">
+                <div class="modal-body">
+                    <img class="img-responsive img-centered note-sample" src="img/notes/xp.png" alt=""/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Fechar</button>
+                </div>
+	        </div>
+	    </div>
+
+		<!-- MODAL TERRA -->
+		<div class="portfolio-modal modal fade" id="modalTerra" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="modal-dialog modal-content container row text-center">
+                <div class="modal-body">
+                    <img class="img-responsive img-centered note-sample" src="img/notes/terra.png" alt=""/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Fechar</button>
+                </div>
+	        </div>
+	    </div>
+
+		<!-- MODAL CLEAR -->
+		<div class="portfolio-modal modal fade" id="modalClear" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="modal-dialog modal-content container row text-center">
+                <div class="modal-body">
+                    <img class="img-responsive img-centered note-sample" src="img/notes/clear.png" alt=""/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Fechar</button>
+                </div>
+	        </div>
+	    </div>
+
+		<!-- MODAL RICO -->
+		<div class="portfolio-modal modal fade" id="modalRico" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="modal-dialog modal-content container row text-center">
+                <div class="modal-body">
+                    <img class="img-responsive img-centered note-sample" src="img/notes/rico.png" alt=""/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Fechar</button>
+                </div>
+	        </div>
+	    </div>
 
 		<!-- RESULTADO -->
 		<div id="tables">
@@ -185,7 +223,7 @@
 			<h5 class="text-uppercase">Entre em Contato</h5>
 			<p>Se você tem alguma sugestão, dúvida ou elogio entre em contato através do e-mail: thales.bm92@gmail.com</p>
 			<p>Copyright © Thales Marega 2020</p>
-			<p>Versão: 1.4.0 (BETA)</p>
+			<p>Versão: 1.5.0 (BETA)</p>
 		</div>
 	</footer>
 </body>

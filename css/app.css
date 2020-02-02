@@ -8,7 +8,7 @@ html, body {
 	min-height: 40%;
 	margin-top: 20px;
 }
-#error-alert {
+#error-alert { 
 	font-family: monaco;
 	opacity: 100 !important;
 }
@@ -123,8 +123,15 @@ FILE
 EXPORT
 ***************************/
 #export-div {
-	text-align: right;
 	margin-bottom: 20px;
+}
+
+/*************************** 
+NOTES IMAGE
+***************************/
+.note-sample {
+	width: 450px;
+	height: 600px;
 }
 
 /*************************** 
