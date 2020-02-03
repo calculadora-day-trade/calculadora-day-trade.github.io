@@ -134,6 +134,10 @@ NOTES IMAGE
 	height: 600px;
 }
 
+#paypal-button-container {
+	width: 100px;
+}
+
 /*************************** 
 LOADING
 ***************************/

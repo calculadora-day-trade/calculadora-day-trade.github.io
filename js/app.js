@@ -151,4 +151,13 @@ function onloadScreen() {
 	$("#resume").hide()
 	$("#result").hide()
 	$("#export-div").hide()
+
+	loadPayPal()
+}
+
+/**
+ * Metodo responsavel por carregar os componentes do PayPal
+ */
+function loadPayPal() {
+	paypal.Buttons().render('#paypal-button-container')
 }
