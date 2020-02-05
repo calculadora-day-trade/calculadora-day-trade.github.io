@@ -12,7 +12,7 @@ function analyse(text) {
 	} else if (finalString.includes("CLEAR")) {
 		return analyseClearCorretora(finalString)
 		
-	} else if (finalString.includes("RICO")) {
+	} else if (finalString.includes("RICO") || finalString.includes("Rico Investimentos")) {
 		return analyseRicoCorretora(finalString)
 	
 	} else if (finalString.includes("XP INVESTIMENTOS")) {
