@@ -19,6 +19,7 @@
 	<script type="text/javascript" src="js/controller/analyse.js"></script>	
 	<script type="text/javascript" src="js/controller/find.js"></script>
 	<script type="text/javascript" src="js/controller/read.js"></script>
+	<script type="text/javascript" src="js/analyse/modal.js"></script>
 	<script type="text/javascript" src="js/analyse/terra.js"></script>
 	<script type="text/javascript" src="js/analyse/clear.js"></script>
 	<script type="text/javascript" src="js/analyse/rico.js"></script>
@@ -32,7 +33,7 @@
 	<!-- PAYPAL -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<script src="https://www.paypal.com/sdk/js?client-id=ATbBQFxkNrsaVyHr3SK_a178HwyLk1W5Hf5H0ZV9bGFbqZyJw2OFj14apLfFShWe5lsSsIL9PcgfCO63"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=AXoXmK053U9IbMrKnv4nuvq2_7Z7EcRjmhzhFiqkimesT8dMx1-o6YX4NgD1yEuYmiRiMK7rdRqvaiRb"></script>
 
 	<title>Calculadora de IR</title>
 
@@ -98,24 +99,29 @@
 				<p class="body-description">Selecione a corretora abaixo para visualizar os modelos das notas de negociações que conseguimos fazer a análise.</p>
 
 				<div class="row justify-content-center">
-		    		<div class="col-3">
+		    		<div class="col-4">
 			            <a href="#modalClear" class="portfolio-link" data-toggle="modal"> 
 			                <img src="img/broker/clear.png" class="img-responsive" alt=""/>
 			            </a>
 			        </div>
-			        <div class="col-3">
+			        <div class="col-4">
 			            <a href="#modalXP" class="portfolio-link" data-toggle="modal"> 
 			                <img src="img/broker/xp.png" class="img-responsive" alt=""/>
 			            </a>
  					</div>
- 					<div class="col-3">
+ 					<div class="col-4">
 			            <a href="#modalTerra" class="portfolio-link" data-toggle="modal"> 
 			                <img src="img/broker/terra.png" class="img-responsive" alt=""/>
 			            </a>
  					</div>
-					<div class="col-3">
+					<div class="col-4">
 			            <a href="#modalRico" class="portfolio-link" data-toggle="modal"> 
 			                <img src="img/broker/rico.png" class="img-responsive" alt=""/>
+			            </a>
+			        </div>
+			        <div class="col-4">
+			            <a href="#modalModal" class="portfolio-link" data-toggle="modal"> 
+			                <img src="img/broker/modal.png" class="img-responsive" alt=""/>
 			            </a>
 			        </div>
  				</div>
@@ -135,6 +141,16 @@
 			<button type="button" class="btn btn-outline-dark" onclick="exportToPDF()">PDF</button>
 			<!-- <button type="button" class="btn btn-outline-success" onclick="exportToExcel()">Excel</button> -->
 		</div>
+
+		<!-- MODAL -->
+		<div class="portfolio-modal modal fade" id="modalModal" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="modal-dialog modal-content container row text-center">
+                <div class="modal-body">
+                    <img class="img-responsive img-centered note-sample" src="img/notes/modal.png" alt=""/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Fechar</button>
+                </div>
+	        </div>
+	    </div>
 
 		<!-- MODAL XP -->
 		<div class="portfolio-modal modal fade" id="modalXP" tabindex="-1" role="dialog" aria-hidden="true">

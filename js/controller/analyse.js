@@ -17,5 +17,8 @@ function analyse(text) {
 	
 	} else if (finalString.includes("XP INVESTIMENTOS")) {
 		return analyseXPCorretora(finalString)
+	
+	} else if (finalString.includes("MODAL DTVM")) {
+		return analyseModalCorretora(finalString)
 	}
 }
