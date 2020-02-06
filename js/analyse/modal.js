@@ -16,7 +16,7 @@ function analyseModalCorretoraOnlyLastPage(finalString) {
 	var net = getFromBetween.get(finalString, MODAL_CORRETORA.NET_VALUE_FIRST_WORD, MODAL_CORRETORA.NET_VALUE_SECOND_WORD)
 	// var number = getFromBetween.get(finalString, MODAL_CORRETORA.NOTE_NUMBER_FIRST_WORD, MODAL_CORRETORA.NOTE_NUMBER_SECOND_WORD)
 
-	irrf = irrf.toString().trim()
+	irrf = irrf.toString().replace(")", "").replace("(", "").replace("Day Trade Projeção", "").replace("Day TradeProjeção", "").trim()
 	fees = fees.toString().trim()
 	gross = gross.toString().trim()
 	net = net.toString().trim()
