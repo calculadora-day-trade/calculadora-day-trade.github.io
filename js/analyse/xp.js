@@ -1,12 +1,12 @@
 function analyseXPCorretora(finalString) {
 	if (isUniqueNote()) {
-		return allPages(finalString)
+		return analyseXPCorretoraAllPages(finalString)
 	} else {
-		return onlyLastPage(finalString)
+		return analyseXPCorretoraOnlyLastPage(finalString)
 	}
 }
 
-function allPages(finalString) {
+function analyseXPCorretoraAllPages(finalString) {
 	var allIrrf = getFromBetween.get(finalString, XP_CORRETORA.IRRF_DAY_TRADE_FIRST_WORD, XP_CORRETORA.IRRF_DAY_TRADE_SECOND_WORD)
 	var allCode = getFromBetween.get(finalString, XP_CORRETORA.CLIENT_CODE_FIRST_WORD, XP_CORRETORA.CLIENT_CODE_SECOND_WORD)
 	var allDate = getFromBetween.get(finalString, XP_CORRETORA.DATE_FIRST_WORD, XP_CORRETORA.DATE_SECOND_WORD)
@@ -63,7 +63,7 @@ function allPages(finalString) {
 	return notes
 }
 
-function onlyLastPage(finalString) {
+function analyseXPCorretoraOnlyLastPage(finalString) {
 	var irrf = getFromBetween.get(finalString, XP_CORRETORA.IRRF_DAY_TRADE_FIRST_WORD, XP_CORRETORA.IRRF_DAY_TRADE_SECOND_WORD)
 	var code = getFromBetween.get(finalString, XP_CORRETORA.CLIENT_CODE_FIRST_WORD, XP_CORRETORA.CLIENT_CODE_SECOND_WORD)
 	var date = getFromBetween.get(finalString, XP_CORRETORA.DATE_FIRST_WORD, XP_CORRETORA.DATE_SECOND_WORD)
