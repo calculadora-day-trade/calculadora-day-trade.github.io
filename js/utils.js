@@ -9,10 +9,16 @@ function isUniqueNote() {
  * Metodo responsavel por ordenar a lista
  */
 function compare(a, b) {
-	if (a.date < b.date) {
+	var d1 = a.date.split("/")
+    var d2 = b.date.split("/")
+
+    var finalDate1 = d1[2] + "-" + d1[1] + "-" + d1[0]
+    var finalDate2 = d2[2] + "-" + d2[1] + "-" + d2[0]
+
+	if (finalDate1 < finalDate2) {
 		return -1
 	}
-	if (a.date > b.date) {
+	if (finalDate1 > finalDate2) {
 		return 1
 	}
 	return 0
