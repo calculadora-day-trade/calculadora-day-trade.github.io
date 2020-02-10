@@ -26,9 +26,10 @@ function exportToPDF() {
 }
 
 function exportToExcel() {
-    var csv1 = tableToCSV(document.getElementById("resultTable"))
+    // var csv1 = tableToCSV(document.getElementById("resultTable"))
+    // var blob = new Blob([csv1, csv2], { type: "text/csv" })
     var csv2 = tableToCSV(document.getElementById("resumeTable"))
-    var blob = new Blob([csv1, csv2], { type: "text/csv" })
+    var blob = new Blob([csv2], { type: "text/csv" })
    
     downloadAnchor(URL.createObjectURL(blob))  
 }
