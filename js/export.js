@@ -26,22 +26,53 @@ function exportToPDF() {
 }
 
 function exportToExcel() {
-    
-    // var dataType = 'application/vnd.ms-excel'
-    // var tableSelect = document.getElementById("resumeTable")
-    // var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20')
+    var csv1 = tableToCSV(document.getElementById("resultTable"))
+    var csv2 = tableToCSV(document.getElementById("resumeTable"))
+    var blob = new Blob([csv1, csv2], { type: "text/csv" })
+   
+    downloadAnchor(URL.createObjectURL(blob))  
+}
 
-    // var downloadLink = document.createElement("a")
-    // document.body.appendChild(downloadLink)
-    
-    // if (navigator.msSaveOrOpenBlob) {
-    //     var blob = new Blob(['\ufeff', tableHTML], {
-    //         type: dataType
-    //     })
-    //     navigator.msSaveOrOpenBlob(blob, filename)
+function tableToCSV(table) {
+    var slice = Array.prototype.slice
+    return getRow(slice, table)
+}
+
+function getRow(slice, table) {
+    var value = slice.call(table.rows).map(function(row) {
+        return getCell(slice, row, table.rows.length - 1)
+    })
+    return value.join("\r\n")
+}
+
+function getCell(slice, row, totalRow) {
+    var value = slice.call(row.cells).map(function(cell) {
+        return '"t"'.replace("t", cell.textContent)
+    })
+
+    console.log("Total de linhas: " + totalRow)
+    console.log("Linha atual: " + row.rowIndex)
+
+    // if (totalRow == row.rowIndex) {
+        // return value.join("\r\n")
     // } else {
-    //     downloadLink.href = 'data:' + dataType + ', ' + tableHTML
-    //     downloadLink.download = 'calculadora-de-ir.xls'
-    //     downloadLink.click()
+    return value.join(",")
     // }
 }
+
+function downloadAnchor(content) {
+    var anchor = document.createElement("a")
+    anchor.style = "display:none !important"
+    anchor.id = "downloadanchor"
+    document.body.appendChild(anchor)
+
+    if ("download" in anchor) {
+        anchor.download = "calculadora-de-ir.csv"
+    }
+
+    anchor.href = content
+    anchor.click()
+    anchor.remove()
+}
+
+
