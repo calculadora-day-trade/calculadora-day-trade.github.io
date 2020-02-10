@@ -48,7 +48,7 @@ function formatMoney(value) {
  * @param operationType String
  */
 function isCredit(operationType) {
-	return operationType == TERRA_CORRETORA.CREDIT
+	return operationType == "C"
 }
 
 /**
@@ -81,4 +81,12 @@ function formatNegativeValue(value) {
  */
 function removeExtraSpaces(text) {
 	return text.replace("(", " ").replace(")", " ").replace(/\s+/g,' ').trim()
+}
+
+/**
+ * Metodo responsavel por converter para float e remover todos os caracteres especiais
+ * @param value String
+ */
+function cleanValue(value) {
+	return parseFloat(value.replace("R$", "").replace(",", ".").replace(/\s/g, '').trim())
 }

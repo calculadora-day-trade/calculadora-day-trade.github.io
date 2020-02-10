@@ -116,7 +116,6 @@ function printModel(model) {
 
         $(nTr).appendTo('#resumeTable')
     })
-
     printResult(model)
 }
 
@@ -139,7 +138,6 @@ function printResult(model) {
 
         $(nTr).appendTo('#resultTable')
     })
-
 	$('#overlay').fadeOut()
 }
 
@@ -154,15 +152,15 @@ function loadPayPal() {
 	// paypal.Buttons().render('#paypal-button-container')
 
 	paypal.Buttons({
-    createOrder: function(data, actions) {
-      // This function sets up the details of the transaction, including the amount and line item details.
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '0.01'
-          }
-        }]
-      });
-    }
-  }).render('#paypal-button-container');
+		createOrder: function(data, actions) {
+		// This function sets up the details of the transaction, including the amount and line item details.
+		return actions.order.create({
+			purchase_units: [{
+					amount: {
+						value: '0.01'
+					}
+				}]
+			});
+		}
+	}).render('#paypal-button-container');
 }

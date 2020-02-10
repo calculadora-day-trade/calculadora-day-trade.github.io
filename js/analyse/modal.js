@@ -25,7 +25,7 @@ function analyseModalCorretoraOnlyLastPage(finalString) {
 	date = date.toString().trim().substring(7, date.toString().length);
 
 	var operationType = MODAL_CORRETORA.CREDIT
-	if (formatResult(irrf)== "0,00") {
+	if (formatResult(irrf) == "0,00") {
 		operationType = MODAL_CORRETORA.DEBIT
 	}
 

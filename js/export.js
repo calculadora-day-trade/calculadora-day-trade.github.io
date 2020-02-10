@@ -75,5 +75,3 @@ function downloadAnchor(content) {
     anchor.click()
     anchor.remove()
 }
-
-

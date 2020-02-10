@@ -24,7 +24,7 @@ function analyseXPCorretoraAllPages(finalString) {
 		var net = allNet[i].toString().split("|")[3].trim().split(" ")[1]
 
 		var operationType = XP_CORRETORA.CREDIT
-		if (formatResult(irrf)== "0,00") {
+		if (formatResult(irrf) == "0,00") {
 			operationType = XP_CORRETORA.DEBIT
 		}
 

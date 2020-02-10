@@ -6,7 +6,7 @@ function analyseTerraCorretora(finalString) {
 	var fees = getFromBetween.get(finalString, TERRA_CORRETORA.TOTAL_FEES_FIRST_WORD, TERRA_CORRETORA.DEBIT)
 
 	var operationType = TERRA_CORRETORA.CREDIT
-	if (formatResult(irrf[0])== "0,00") {
+	if (formatResult(irrf[0]) == "0,00") {
 		operationType = TERRA_CORRETORA.DEBIT
 	}
 

@@ -38,11 +38,3 @@ function calculate(model) {
 
 	return result
 }
-
-/**
- * Metodo responsavel por converter para float e remover todos os caracteres especiais
- * @param value String
- */
-function cleanValue(value) {
-	return parseFloat(value.replace("R$", "").replace(",", ".").replace(/\s/g, '').trim())
-}
