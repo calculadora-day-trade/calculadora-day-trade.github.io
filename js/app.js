@@ -143,16 +143,8 @@ function printResult(model) {
 	$('#overlay').fadeOut()
 }
 
-/**
- * Metodo que esconde varios componentes quando carrega a tela
- */
 function onloadScreen() {
-	$("#error-alert").hide()
-	$("#resume").hide()
-	$("#result").hide()
-	$("#export-div").hide()
-
-	loadPayPal()
+	// loadPayPal()
 }
 
 /**

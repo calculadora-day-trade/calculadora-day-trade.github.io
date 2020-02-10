@@ -12,6 +12,9 @@ html, body {
 	font-family: monaco;
 	opacity: 100 !important;
 }
+#resume, #result, #error-alert, #export-div {
+	display: none;
+}
 
 /*************************** 
 HEADER
