@@ -16,48 +16,55 @@ function analyseXPCorretoraAllPages(finalString) {
 	var allNet = getFromBetween.get(finalString, XP_CORRETORA.NET_VALUE_FIRST_WORD, XP_CORRETORA.NET_VALUE_SECOND_WORD)
 
 	var notes = []
-	var i;
+	var i
+	var index = 0
 	for (i = 0; i < allCode.length; i++) {
-		var irrf = allIrrf[i].toString().split("|")[1].trim().split(" ")[0]
-		var fees = allFees[i].toString().split("|")[2].trim().split(" ")[1]
-		var gross = allGross[i].toString().split("|")[0].trim().split(" ")[4]
-		var net = allNet[i].toString().split("|")[3].trim().split(" ")[1]
-
-		var operationType = XP_CORRETORA.CREDIT
-		if (formatResult(irrf) == "0,00") {
-			operationType = XP_CORRETORA.DEBIT
-		}
-
-		var finalGross = formatNegativeValue(gross)
-		var finalNet = formatNegativeValue(net)
-		if (isCredit(operationType)) {
-			finalGross = formatPositiveValue(gross)
-			finalNet = formatPositiveValue(net)
-		}
-
 		console.log("################")
-		console.log("Codigo do Cliente: " + allCode[i])
-		console.log("Data: " + allDate[i])
-		console.log("Numero da Nota: " + allNumber[i])
-		console.log("Bruto: " + finalGross)
-		console.log("Liquido: " + finalNet)
-		console.log("Taxas " + fees)
-		console.log("Impostos " + irrf)
-		console.log("Gain " + isCredit(operationType))
+		console.log("indice" + i)
 		console.log("################")
+		if (!allCode[i].includes("CONTINUA")) {
+			var irrf = allIrrf[i].toString().split("|")[1].trim().split(" ")[0]
+			var fees = allFees[index].toString().split("|")[2].trim().split(" ")[1]
+			var gross = allGross[i].toString().split("|")[0].trim().split(" ")[4]
+			var net = allNet[i].toString().split("|")[3].trim().split(" ")[1]
 
-		var note = { 
-			clientCode: formatResult(allCode[i]), 
-			date: formatResult(allDate[i]), 
-			noteNumber: formatResult(allNumber[i]), 
-			grossValue: finalGross, 
-			netValue: finalNet, 
-			totalFees: formatNegativeValue(fees), 
-			totalIRRF: formatPositiveValue(irrf),
-			gain: isCredit(operationType)
+			var operationType = XP_CORRETORA.CREDIT
+			if (formatResult(irrf) == "0,00") {
+				operationType = XP_CORRETORA.DEBIT
+			}
+
+			var finalGross = formatNegativeValue(gross)
+			var finalNet = formatNegativeValue(net)
+			if (isCredit(operationType)) {
+				finalGross = formatPositiveValue(gross)
+				finalNet = formatPositiveValue(net)
+			}
+
+			console.log("################")
+			console.log("Codigo do Cliente: " + allCode[i])
+			console.log("Data: " + allDate[index])
+			console.log("Numero da Nota: " + allNumber[i])
+			console.log("Bruto: " + finalGross)
+			console.log("Liquido: " + finalNet)
+			console.log("Taxas " + fees)
+			console.log("Impostos " + irrf)
+			console.log("Gain " + isCredit(operationType))
+			console.log("################")
+
+			var note = { 
+				clientCode: formatResult(allCode[i]), 
+				date: formatResult(allDate[i]), 
+				noteNumber: formatResult(allNumber[i]), 
+				grossValue: finalGross, 
+				netValue: finalNet, 
+				totalFees: formatNegativeValue(fees), 
+				totalIRRF: formatPositiveValue(irrf),
+				gain: isCredit(operationType)
+			}
+
+			notes[index] = note
+			index++
 		}
-
-		notes[i] = note
 	}
 
 	return notes
