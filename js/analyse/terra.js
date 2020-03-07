@@ -13,10 +13,25 @@ function analyseTerraCorretora(finalString) {
 	var gross = getFromBetween.get(finalString, TERRA_CORRETORA.GROSS_VALUE_FIRST_WORD, operationType)
 	var net = getFromBetween.get(finalString, TERRA_CORRETORA.NET_VALUE_FIRST_WORD, operationType)
 	
-	var finalGross = formatNegativeValue(gross[0])
+	if (gross[0].includes("C")) {
+		gross[0] = gross[0].split("C")[0]
+		operationType = TERRA_CORRETORA.CREDIT
+
+		var finalGross = formatNegativeValue(gross[0])
+		if (isCredit(operationType)) {
+			finalGross = formatPositiveValue(gross[0])
+		}
+
+		operationType = TERRA_CORRETORA.DEBIT
+	} else {
+		var finalGross = formatNegativeValue(gross[0])
+		if (isCredit(operationType)) {
+			finalGross = formatPositiveValue(gross[0])
+		}
+	}
+
 	var finalNet = formatNegativeValue(net[0])
 	if (isCredit(operationType)) {
-		finalGross = formatPositiveValue(gross[0])
 		finalNet = formatPositiveValue(net[0])
 	}
 
